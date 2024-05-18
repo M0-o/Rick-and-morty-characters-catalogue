@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", "Arial", "sans-serif";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 0px;
+  position: sticky;
+  top: 90px;
+  font-size: 3em;
+}
+
+body {
+  height: 110vh;
+}
+
+#mainWrapper {
+  position: absolute;
+  z-index: 0;
+  overflow: hidden;
+  width: 98vw;
+  min-height: 90vh;
+  perspective: 900px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  place-items: center;
+}
+
+#mainWrapper.rotate .card {
+  transform: rotateY(180deg);
+}
+
+#loginFormWrapper,
+#signupFormWrapper {
+  position: absolute;
+  height: 300px;
+  max-width: 80%;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  display: flex;
+  backface-visibility: hidden;
+}
+
+#loginFormWrapper {
+  z-index: 2;
+}
+#signupFormWrapper {
+  transform: rotateY(180deg);
+  z-index: 3;
+}
+
+fieldset,
+.side-panel,
+form,
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.side-panel {
+  flex-wrap: wrap;
+  padding: 2em;
+  border-color: white;
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 0px 5px 5px 0px;
+}
+fieldset {
+  height: 80%;
+  flex-wrap: wrap;
+  padding: 2em;
+  max-width: 400px;
+  width: 100%;
+  gap: 0.8em;
+  border-bottom: none;
+}
+
+body {
+  align-items: center;
+  background-color: black;
+  color: white;
+  margin: 0px;
+}
+
+label {
+  padding-right: 0.8em;
+}
+
+.btn-container {
+  text-align: center;
+  width: 100%;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+}
+
+label,
+button {
+  font-size: small;
+  color: rgba(22, 22, 22, 0.918);
+}
+
+button,
+.input-wrapper {
+  width: 80%;
+}
+
+.submit-btn {
+  color: white;
+  background-color: black;
+}
+
+.submit-btn,
+.rotate-btn {
+  font-weight: lighter;
+  border-radius: 5px;
+  height: 2em;
+  margin-top: 1em;
+}
+
+fieldset,
+input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+input {
+  border-bottom-width: 1px;
+}
+button,
+input {
+  transition: all 250ms;
+}
+input:focus,
+input:hover,
+button:hover {
+  outline: none;
+  border-bottom-color: black;
+  transform: scale(1.05);
+}
+
+.side-panel {
+  color: white;
+  background-color: black;
+}
+
+.rotate-btn {
+  background-color: white;
+}
+
+p {
+  font-weight: lighter;
+  font-size: medium;
+}
+
+.card {
+  transition: transform 0.85s;
+  transform-style: preserve-3d;
+  position: relative;
+  min-width: 80%;
+  min-height: 400px;
+}
+
+a {
+  color: white;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  width: 98vw;
+  text-align: center;
+  position: absolute;
+  bottom: -20vh;
+  margin-bottom: 40px;
+}

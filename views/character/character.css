@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", "Arial", "sans-serif";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header > a > h1 {
+  color: white;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: sticky;
+  top: 90px;
+  font-size: 3em;
+  z-index: -1;
+}
+
+header {
+  text-align: center;
+}
+
+body {
+  background-color: black;
+  color: white;
+  margin: 0px;
+}
+
+article > img {
+  width: 500px;
+  height: 500px;
+  border-radius: 5px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  background-color: rgb(37, 37, 37);
+  min-width: 500px;
+  border-radius: 5px;
+}
+table {
+  width: 100%;
+  border: 1px solid #eeeeee;
+  background-color: black;
+}
+
+span {
+  color: gray;
+}
+h3 {
+  width: 100%;
+}
+div > h3 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* Apply styles to the table */
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 2em 2em 2em 2em;
+}
+
+/* Apply styles to table headers */
+th {
+  background-color: #333; /* Dark gray background */
+  color: white; /* White text color */
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Apply styles to table cells */
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+/* Alternate row colors */
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Light gray background for even rows */
+}
+
+/* Hover effect on rows */
+tr:hover {
+  background-color: #8a8a8a; /* Light gray background on hover */
+}
+
+.card-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  width: 98vw;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  max-width: 500px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+article > h3 {
+  text-align: center;
+}
+
+article > h1 {
+  font-size: 2em;
+}

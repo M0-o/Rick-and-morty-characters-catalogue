@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./character.css" />
+    <link
+      rel="shortcut icon"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAAAAABWESUoAAAA00lEQVR4AeTPKwzCMBCA4dMI7BQSOYsPCQm2Fp/MN5nF4tCzyHmmSP0SfFI1VV1V/5PLIIGbV5y5R7+mPfmb2LTet0c7dTqdywNAb0EAWIvGHnK8WNDF8gXumg+fh05toyfjL6gSQFpJA8B1AR7wnOAmULoMWwsSWSoIO+18Ss4AjbqHsAYGp60FQwEI836lWYCoFxWIj7D8QwWT1ApOTjYRzgZsIYuH4KCTC7QGCFCAUYtQYGXBGWgKUby67MQAzfKOel/bNV/DGVkEo5tgghkxAACxEexpZuGiRwAAAABJRU5ErkJggg=="
+      type="image/x-icon"
+    />
+    <title><%= name %></title>
+  </head>
+  <body>
+    <header>
+      <a href="/homepage"><h1>[ as ]</h1></h1></a>
+    </header>
+    <div class="card-container">
+      <article>
+        <h1><%= name %></h1>
+        <img src="<%= image %>"" alt= "<%= name %>"">
+        <div class="title-container">
+          <h3>Status : <span><%= status%></span></h3>
+        </div>
+        <div class="title-container">
+          <h3>Species : <span><%= species%></span></h3>
+        </div>
+        <% if(type != "") { %>  <div class="title-container">
+          <h3>Type : <span><%= type%></span></h3>
+        </div>
+        <% } %>
+        <div class="title-container">
+          <h3>Gender : <span><%= gender%></span></h3>
+        </div>
+        <div class="title-container">
+          <h3>Origin : <span><%= origin.name%></span></h3>
+        </div>
+        <div class="title-container">
+          <h3>Last Known location : <span><%= location.name%></span></h3>
+        </div>
+        <h3>appeared in episodes :</h3>
+        <table>
+          <tr>
+            <th>Season/ep</th>
+            <th>Name</th>
+            <th>Air date</th>
+          </tr>
+        </table>
+      </article>
+    </div>
+    <footer
+      id="page17-band691-Footer692"
+      class="sc-1lm6p4u-0 OiZgE footer w-100"
+    >
+      <div class="container-fluid p-0">
+        <div class="row primary-row">
+          <div class="col-12 text-center">
+            <a
+              class="btn btn-link"
+              href="https://www.adultswim.com/newsletter"
+              target="_top"
+              >Sign Up For the Adult Swim Newsletter</a
+            >
+          </div>
+        </div>
+        <div class="row secondary-row">
+          <div class="col-12 text-center d-inline-block">
+            <a
+              class="small btn-legal d-inline-block"
+              href="https://www.warnermediaprivacy.com/policycenter/b2c/wm/"
+              target="_top"
+              >Privacy Policy</a
+            ><a
+              class="small btn-legal d-inline-block"
+              href="https://www.warnermediaprivacy.com/policycenter/b2c/wm/"
+              target="_top"
+              >Ad Choices</a
+            ><a
+              class="small btn-legal d-inline-block ot-sdk-show-settings d-inline-block"
+              id="compliance-link"
+              href="#compliance-link"
+              >Cookie Settings</a
+            ><a
+              class="small btn-legal d-inline-block"
+              href="https://www.adultswim.com/terms"
+              target="_top"
+              >Terms of Use</a
+            ><a
+              class="small btn-legal d-inline-block"
+              href="http://www.tvguidelines.org/"
+              target="_top"
+              >Parental Controls</a
+            ><a
+              class="small btn-legal d-inline-block"
+              href="https://adultswim.zendesk.com/hc/en-us/sections/9514939560603-Closed-Captioning"
+              target="_top"
+              >Closed Captioning</a
+            ><a
+              class="small btn-legal d-inline-block"
+              href="https://adultswim.zendesk.com/hc/en-us/requests/new"
+              target="_top"
+              >Contact Us</a
+            ><a
+              class="small btn-legal d-inline-block"
+              href="https://pressroom.warnermedia.com/"
+              target="_top"
+              >Press Room</a
+            ><a
+              class="small btn-legal d-inline-block"
+              href="https://adultswim.zendesk.com/"
+              target="_top"
+              >Help</a
+            ><a
+              class="small btn-legal d-inline-block"
+              href="https://www.adultswim.com/sitemap"
+              target="_top"
+              >Site Map</a
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center d-inline-block">
+            <div class="small legal d-inline-block">
+              <div>
+                TM &amp; © 2024 The Cartoon Network, Inc. All Rights
+                Reserved.<br />
+                This project was completed with assistance from the Georgia Film
+                Office, a division of the Georgia Department of Economic
+                Development.
+                <img
+                  alt="Georgia peach logo"
+                  src="https://i.cdn.turner.com/adultswim/big/img/footer/georgia.png"
+                  width="100px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      let episodes = `<%= episode %>`.split(",");
+      console.log(episodes);
+      let table = document.querySelector("table");
+
+      let getEps = async (episodes) => {
+        for (ep of episodes) {
+          let episodePromise = await fetch(ep);
+          let episodeData = await episodePromise.json();
+          table.innerHTML += `<tr>
+                  <td>${episodeData.episode}</td>
+                  <td>${episodeData.name}</td>
+                  <td>${episodeData.air_date}</td>
+              </tr>`;
+        }
+      };
+      getEps(episodes);
+    </script>
+  </body>
+</html>

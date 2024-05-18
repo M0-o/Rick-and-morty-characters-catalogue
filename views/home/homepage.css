@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", "Arial", "sans-serif";
+}
+
+article {
+  display: flex;
+  background-color: rgb(37, 37, 37);
+  gap: 1em;
+  transition: all 250ms ease-in;
+  border-radius: 5px;
+}
+
+.load {
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+}
+
+article > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 1em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+button {
+  border: none;
+}
+body {
+  background-color: black;
+  color: white;
+}
+
+.name {
+  font-size: x-large;
+}
+h1 {
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: sticky;
+  top: 90px;
+  font-size: 3em;
+}
+
+#pages {
+  display: flex;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  justify-content: center;
+  gap: 5px;
+}
+
+#pages > button {
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(37, 37, 37);
+  outline: none;
+  width: 25px;
+  height: 25px;
+}
+
+#pages > button:hover {
+  transform: scale(1.15);
+}
+
+article:hover {
+  transform: scale(1.05);
+  color: black;
+  background-color: white;
+}
+
+span {
+  display: inline-block;
+  width: 100%;
+}
+
+.Dead {
+  color: rgb(255, 176, 176);
+}
+
+.Alive {
+  color: rgb(179, 255, 179);
+}
+
+.unknown {
+  color: gray;
+}
+
+.input-container {
+  width: 98vw;
+  height: 100vh;
+  z-index: 2;
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+header > img {
+  filter: invert(100%);
+  z-index: 2;
+  position: absolute;
+  right: 50px;
+  top: 60px;
+  width: 30px;
+  height: 30px;
+}
+
+.visible {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+input {
+  border-radius: 30px;
+  width: 200px;
+  height: 40px;
+  font-size: large;
+  text-align: center;
+}
